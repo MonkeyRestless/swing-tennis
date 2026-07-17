@@ -4,7 +4,8 @@
   "private": true,
   "description": "Swing Tennis — a browser 3D tennis game you play with your phone as the racket.",
   "scripts": {
-    "build": "npm --prefix client install && npm --prefix client run build && npm --prefix server install",
+    "_comment": "--include=dev is required: hosts set NODE_ENV=production, which makes npm skip devDependencies — and vite, the thing that builds the client, is one. The server has no dev deps, so its install stays lean.",
+    "build": "npm --prefix client install --include=dev && npm --prefix client run build && npm --prefix server install --omit=dev",
     "start": "node server/index.js"
   },
   "engines": {
