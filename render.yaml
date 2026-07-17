@@ -1,0 +1,16 @@
+# Render blueprint. Nothing here is Render-specific beyond the field names — the app is a
+# plain Node service that reads PORT from the environment, so moving to another host (or to a
+# paid plan) is a config change, not a code change.
+services:
+  - type: web
+    name: swing-tennis
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production

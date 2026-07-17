@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# Machine-local editor/tool settings, not part of the project
+.claude/settings.local.json
